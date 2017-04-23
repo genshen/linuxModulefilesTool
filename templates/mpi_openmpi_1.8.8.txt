@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##{{.info}}
+##
+## modules mpi/openmpi/1.8.8
+##
+## modulefiles/mpi/openmpi/1.8.8. Written by One, Mar-15-2017
+##
+proc ModulesHelp { } {
+        global version MPI_HOME
+        puts stderr "\tOPENMPI MPI utilities for openIB and GNU."
+        puts stderr "\n\tVersion $version"
+        puts stderr "\n\tThe homedir is $MPI_HOME"
+        puts stderr "\n\tSee http://www.open-mpi.org/" 
+ }
+
+module-whatis   "OPENMPI MPI utilities for IB/GNU compiler"
+
+conflict mpi
+
+set             version                 1.8.8
+set             MPI_HOME                /opt/mpi/openmpi/1.8.8
+
+prepend-path    PATH                    ${MPI_HOME}/bin
+prepend-path    LD_LIBRARY_PATH         ${MPI_HOME}/lib
+prepend-path    MANPATH                 ${MPI_HOME}/share/man

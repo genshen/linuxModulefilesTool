@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## modules projects/moose
+##
+## modulefiles/projects/moose-dev-gcc Written by One, Mar-21-2017
+##
+proc ModulesHelp { } {
+        global version base_path
+        #puts stderr "\tprojects/moose/$version - sets the Environment for Python $version"
+        #puts stderr "\n\tCommands 'moose' and 'moose3' will be the same"
+        #puts stderr "\n\tThe base_path is $base_path"
+        #puts stderr "\n\n\t#####   DO NOT MOVE OR MODIFY THE PATH OF MOOSE #####"
+}
+
+module-whatis	"Set moose environment for use."
+
+#conflict projects/moose
+
+#set	            version	        3.6.0	
+set             base_path       /opt/projects/moose-compilers 
+set             sys             linux86
+
+setenv          CC              mpicc
+setenv          CXX             mpicxx
+setenv          F90             mpif90
+setenv          F77             mpif77
+setenv          FC              mpif90
+setenv          PETSC_DIR       $base_path/petsc/petsc-3.6.4/gcc-opt

@@ -1,0 +1,26 @@
+#%Module1.0#####################################################################
+##{{.info}}
+##
+## modules {{.module_name}}
+##
+## modulefiles/{{.module_name}}. Written by One, Mar-14-2017
+##
+proc ModulesHelp { } {
+        global version homedir modroot
+
+        puts stderr "\t{{.module_name}} - sets the Environment for GLIBC $version"
+        puts stderr "\n\tInludes ldd 2.14"
+        puts stderr "\n\tThe homedir is $homedir"
+        puts stderr "\n\t#####   DO NOT MOVE OR MODIFY THE PATH OF LIBS #####"
+}
+
+module-whatis	"Sets the environment for using glibc-2.14 lib"
+
+conflict {{.module_root}}
+# for Tcl script use only
+set	version		{{.version}}
+set homedir     {{.home}}
+set sys         {{.system}}
+
+prepend-path    PATH            $homedir/bin
+prepend-path    LD_LIBRARY_PATH $homedir/lib

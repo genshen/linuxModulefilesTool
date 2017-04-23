@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##
+## modules tools/python3.6.0
+##
+## modulefiles/tools/python/3.6.0 Written by One, Mar-14-2017
+##
+proc ModulesHelp { } {
+        global version homedir
+        puts stderr "\ttools/python/$version - sets the Environment for Python $version"
+        puts stderr "\n\tCommands 'python' and 'python3' will be the same"
+        puts stderr "\n\tThe homedir is $homedir"
+        puts stderr "\n\n\t#####   DO NOT MOVE OR MODIFY THE PATH OF PYTHON #####"
+}
+
+module-whatis	"Set python3.6.0 for use."
+
+conflict tools/python
+
+set	            version	        3.6.0	
+set             homedir         /opt/tools/python/3.6.0 
+set             sys             linux86
+
+prepend-path    PATH            ${homedir}/bin
+#prepend-path   PYTHONPATH      $/usr/lib64/python2.6/site-packages
+prepend-path    PYTHONPATH      ${homedir}/lib/python3.6/site-packages

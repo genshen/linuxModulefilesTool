@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## modules tools/swig3.0.12
+##
+## modulefiles/tools/swig/3.0.12 Written by One, Mar-17-2017
+##
+proc ModulesHelp { } {
+        global version homedir
+        puts stderr "\ttools/swig/$version - sets the Environment for swig $version"
+        puts stderr "\n\tThe homedir is $homedir"
+        puts stderr "\n\n\t#####   DO NOT MOVE OR MODIFY THE PATH OF SWIG #####"
+}
+
+module-whatis	"Set swig3.0.12 for use."
+
+conflict tools/swig
+
+set	            version	        3.0.12	
+set             homedir         /opt/tools/swig/3.0.12 
+set             sys             linux86
+
+prepend-path    PATH            ${homedir}/bin

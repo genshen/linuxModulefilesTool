@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## modules tools/qt5.4.2
+##
+## modulefiles/tools/qt/5.4.2 Written by One, Mar-14-2017
+##
+proc ModulesHelp { } {
+        global version homedir
+        puts stderr "\ttools/qt/$version - sets the Environment for qt $version"
+        puts stderr "\n\tThe homedir is $homedir"
+        puts stderr "\n\n\t#####   DO NOT MOVE OR MODIFY THE PATH OF QT #####"
+}
+
+module-whatis	"Set qt5.4.2 for use."
+
+conflict tools/qt
+set version 5.4.2
+set homdir /opt/tools/qt/5.4.2
+
+prepend-path    LD_LIBRARY_PATH         ${homdir}/lib
+prepend-path    LIBRARY_PATH            ${homdir}/lib
+prepend-path    PATH                    ${homdir}/bin
+prepend-path    INCLUDE                 ${homdir}/include
+
