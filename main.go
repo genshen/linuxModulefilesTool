@@ -48,51 +48,48 @@ func init() {
 
 func main() {
 
-
-
-
-	f, err := os.Open(CONFIG_PATH)
-	if err != nil {
-		log.Fatal(err)
-	}
-	config, err := ioutil.ReadAll(f)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if err := json.Unmarshal(config, &moduleFilesConfig); err != nil {
-		log.Fatalf("JSON unmarshaling failed: %s", err)
-	}
-
-	log.Println(len(moduleFilesConfig.Config.Items))
-
-	for _, item := range moduleFilesConfig.Config.Items {
-		var target = moduleFilesConfig.Config.ReleasePrefix + item.ModuleName
-		if err := os.MkdirAll(path.Dir(target), os.ModePerm); err != nil {
-			log.Fatal("error:", err)
-		}
-		if file, err := os.Create(target); err != nil {
-			log.Fatal("error:", err)
-		} else { //generate modules files
-			if s1, err := template.ParseFiles(moduleFilesConfig.Config.TemplatePrefix + item.TemplatePath); err != nil { //todo
-				log.Fatal("parse template file error:", err)
-			} else {
-				//todo if the tag in temprate does not appear in item.Data,it will cause <no value>
-				item.Data["module_name"] = item.ModuleName //e.g. gcc/5.1.0
-				item.Data["module_root"] = item.ModuleRoot //e.g. gcc  (just dir)
-				item.Data["version"] = item.Version
-				item.Data["description"] = item.Description
-				item.Data["home"] = item.Home
-				item.Data["info"] = Info
-				s1.Execute(file, item.Data)
-				log.Println("generated module file:", item.ModuleName, "(", item.ModuleAlias, ")")
-			}
-		}
-	}
-
-	if moduleFilesConfig.Config.ReleasePrefix == "" {
-		log.Println(len(moduleFilesConfig.Config.Items), "module files were released to:", pwd)
-	} else {
-		log.Println(len(moduleFilesConfig.Config.Items), "module files were released to:", moduleFilesConfig.Config.ReleasePrefix)
-	}
+	//f, err := os.Open(CONFIG_PATH)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//config, err := ioutil.ReadAll(f)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//if err := json.Unmarshal(config, &moduleFilesConfig); err != nil {
+	//	log.Fatalf("JSON unmarshaling failed: %s", err)
+	//}
+	//
+	//log.Println(len(moduleFilesConfig.Config.Items))
+	//
+	//for _, item := range moduleFilesConfig.Config.Items {
+	//	var target = moduleFilesConfig.Config.ReleasePrefix + item.ModuleName
+	//	if err := os.MkdirAll(path.Dir(target), os.ModePerm); err != nil {
+	//		log.Fatal("error:", err)
+	//	}
+	//	if file, err := os.Create(target); err != nil {
+	//		log.Fatal("error:", err)
+	//	} else { //generate modules files
+	//		if s1, err := template.ParseFiles(moduleFilesConfig.Config.TemplatePrefix + item.TemplatePath); err != nil { //todo
+	//			log.Fatal("parse template file error:", err)
+	//		} else {
+	//			//todo if the tag in temprate does not appear in item.Data,it will cause <no value>
+	//			item.Data["module_name"] = item.ModuleName //e.g. gcc/5.1.0
+	//			item.Data["module_root"] = item.ModuleRoot //e.g. gcc  (just dir)
+	//			item.Data["version"] = item.Version
+	//			item.Data["description"] = item.Description
+	//			item.Data["home"] = item.Home
+	//			item.Data["info"] = Info
+	//			s1.Execute(file, item.Data)
+	//			log.Println("generated module file:", item.ModuleName, "(", item.ModuleAlias, ")")
+	//		}
+	//	}
+	//}
+	//
+	//if moduleFilesConfig.Config.ReleasePrefix == "" {
+	//	log.Println(len(moduleFilesConfig.Config.Items), "module files were released to:", pwd)
+	//} else {
+	//	log.Println(len(moduleFilesConfig.Config.Items), "module files were released to:", moduleFilesConfig.Config.ReleasePrefix)
+	//}
 
 }

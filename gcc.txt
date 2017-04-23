@@ -1,7 +1,0 @@
-{{.home}}
-
-Description:
-{{.description}}
-
-Version:
-{{.version}}
