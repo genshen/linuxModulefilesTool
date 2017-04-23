@@ -3,7 +3,7 @@
 ##
 ## modules  {{.module_name}}
 ##
-## modulefiles/{{.module_name}}. Written by One, Mar-14-2017
+## modulefiles/{{.module_name}}. Written by xxx, Mar-14-2017
 ##
 proc ModulesHelp { } {
         global version homedir modroot

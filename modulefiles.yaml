@@ -1,0 +1,162 @@
+# comment like this
+# we use yaml rule to write configure file, more details at:http://yaml.org
+##  note: moose-dev-gcc for /opt/projects/moose-compilers has been removed
+last_modified: 2017-04-22
+last_modified_by: genshen
+configure:
+    #release_prefix and template_prefix must end with '/'
+    release_prefix: release/
+    template_prefix: templates/
+    items:
+        cmake/3.0.2:  #usually it's same as module_name
+            module_name: cmake/3.0.2
+            module_alias: cmake/3.0.2
+            tag: cmake
+            version: 3.0.2
+            description: '"Set cmake3.0.2 for use."'
+            home: /opt/tools/cmake/3.0.2
+            template_name: cmake.txt
+            additional:
+                system: linux_x86_64
+
+        cmake/3.8.0:
+            module_name: cmake/3.8.0
+            module_alias: cmake/3.8.0
+            tag: cmake
+            version: 3.8.0
+            description: '"Set cmake3.8.0 for use."'
+            home: /opt/tools/cmake/3.8.0
+            template_name: cmake.txt
+            additional:
+                system: linux_x86_64
+        gcc/6.3.0:
+            module_name: gcc/6.3.0
+            module_alias: gcc/6.3.0
+            version: 6.3.0
+            tag: gcc
+            description: '"Sets the environment for using gcc-6.3.0 compiler (C, C++, Fortran, Java)"'
+            home: /opt/compilers/gcc/6.3.0
+            template_name: gcc_6.3.0.txt
+            additional:
+                system: linux_x86_64
+
+        gcc/5.1.0:
+            module_name: gcc/5.1.0
+            module_alias: gcc/5.1.0
+            tag: gcc
+            version: 5.1.0
+            description: '"Sets the environment for using gcc-5.1.0 compiler (C, C++, Fortran, Java)"'
+            home: /opt/compilers/gcc/5.1.0
+            template_name: gcc_5.1.0.txt
+            additional:
+                system: linux_x86_64
+
+        glibc/2.14:
+            module_name: glibc/2.14
+            module_alias: glibc/2.14
+            tag: glib
+            version: 2.14
+            description: '"Sets the environment for using glibc-2.14 lib"'
+            home: /opt/lib/glibc/2.14
+            template_name: glibc_2.14.txt
+            additional:
+                system: linux_x86_64
+
+        go:
+            module_name: go
+            module_alias: go
+            tag: go
+            version: 1.8.1
+            description: '"Sets the environment for using golang1.8.1 compiler"'
+            home: /opt/compilers/go
+            template_name: go_1.8.1.txt
+            additional:
+                system: linux_x86_64
+
+        mpi/mpich/3.2:
+            module_name: mpi/mpich/3.2
+            module_alias: mpi/mpich/3.2
+            tag: mpi
+            version: 3.2
+            description: '"MPICH MPI utilities for IB/GNU compiler"'
+            home: /usr/local/mpich3.2
+            template_name: mpi_mpich_3.2.txt
+            additional:
+                system: linux_x86_64
+
+        mpi/openmpi/1.6.5:
+            module_name: mpi/openmpi/1.6.5
+            module_alias: mpi/openmpi/1.6.5
+            tag: mpi
+            version: 1.6.5
+            description: '"OPENMPI MPI utilities for IB/GNU compiler"'
+            home: /opt/mpi/openmpi/1.6.5
+            template_name: mpi_openmpi_1.6.5.txt
+            additional:
+                system: linux_x86_64
+
+        mpi/openmpi/1.8.8:
+            module_name: mpi/openmpi/1.8.8
+            module_alias: mpi/openmpi/1.8.8
+            tag: mpi
+            version: 1.8.8
+            description: '"OPENMPI MPI utilities for IB/GNU compiler"'
+            home: /opt/mpi/openmpi/1.8.8
+            template_name: mpi_openmpi_1.8.8.txt
+            additional:
+                system: linux_x86_64
+
+        python/2.7.12:
+            module_name: python/2.7.12
+            module_alias: python/2.7.12
+            tag: python
+            version: 2.7.12
+            description: '"Set python2.7.12 for use."'
+            home: /opt/tools/python/2.7.12
+            template_name: python_2.7.12.txt
+            additional:
+                system: linux_x86_64
+
+        python/3.6.0:
+            module_name: python/3.6.0
+            module_alias: python/3.6.0
+            tag: python
+            version: 3.6.0
+            description: '"Set python3.6.0 for use."'
+            home: /opt/tools/python/3.6.0
+            template_name: python_3.6.0.txt
+            additional:
+                system: linux_x86_64
+
+        qt/4.8.6:
+            module_name: qt/4.8.6
+            module_alias: qt/4.8.6
+            tag: qt
+            version: 4.8.6
+            description: 'Set qt4.8.6 for use."'
+            home: /opt/tools/qt/4.8.6
+            template_name: qt_4.8.6.txt
+            additional:
+                system: linux_x86_64
+
+        qt/5.4.2:
+            module_name: qt/5.4.2
+            module_alias: qt/5.4.2
+            tag: qt
+            version: 5.4.2
+            description: '"Set qt5.4.2 for use."'
+            home: /opt/tools/qt/5.4.2
+            template_name: qt_5.4.2.txt
+            additional:
+                system: linux_x86_64
+
+        swig/3.0.12:
+            module_name: swig/3.0.12
+            module_alias: swig/3.0.12
+            tag: swig
+            version: 3.0.12
+            description: '"Set swig3.0.12 for use."'
+            home: /opt/tools/swig/3.0.12
+            template_name: swig_3.0.12.txt
+            additional:
+                system: linux_x86_64
