@@ -1,13 +1,13 @@
 ## Linux Environment Module Files Tool
-this is a linux environment module files tool,it gennerate module files with configure file and template files.  
-what is [Environment Module](http://modules.sourceforge.net/),it provides dynamic modification of a user's environment via **modulefiles**.
+this is a linux environment module files tool,it gennerate module files via configure file and template files.  
+what is [Environment Module](http://modules.sourceforge.net/)? it provides dynamic modification of a user's environment via **modulefiles**.
 
 ## Features
 + you can just write one template file for different versions of one software package.
 
 ## How does it word
 the go program first read configure file:modulefiles.yaml which is located at current folder.  
-note:the modulefiles.yaml is written via yaml configure language,you can find more detail at [http://www.yaml.org/](http://www.yaml.org/)
+note:the modulefiles.yaml is written via yaml configure language,you can get more details at [http://www.yaml.org/](http://www.yaml.org/)
 
 then the go program generate modulefiles one by one:  
 travel configure.items in file modulefiles.yaml; value *module_name,tag,version,description,home and additional* will be send to template where value *template_name* refers to.  
@@ -89,7 +89,7 @@ now you can load or unload cmake/3.8.0 module via environment module,e.g. *modul
 all ok!
 
 ## how to build
-ensure you have install [golang](https://golang.org) and configure GOROOT and GOPATH
+ensure you have install [golang](https://golang.org) and configured GOROOT and GOPATH
 #### dependency packages
 ```
 go get gopkg.in/yaml.v2
