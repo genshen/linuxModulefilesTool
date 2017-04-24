@@ -2,6 +2,9 @@
 this is a linux environment module files tool,it gennerate module files with configure file and template files.  
 what is [Environment Module](http://modules.sourceforge.net/),it provides dynamic modification of a user's environment via **modulefiles**.
 
+## Features
++ you can just write one template file for different versions of one software package.
+
 ## How does it word
 the go program first read configure file:modulefiles.yaml which is located at current folder.  
 note:the modulefiles.yaml is written via yaml configure language,you can find more detail at [http://www.yaml.org/](http://www.yaml.org/)
@@ -95,3 +98,6 @@ just run:
 ```
 go build main.go
 ```
+
+## License
+[MIT](https://opensource.org/licenses/MIT)

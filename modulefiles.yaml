@@ -36,7 +36,7 @@ configure:
             tag: gcc
             description: '"Sets the environment for using gcc-6.3.0 compiler (C, C++, Fortran, Java)"'
             home: /opt/compilers/gcc/6.3.0
-            template_name: gcc_6.3.0.txt
+            template_name: gcc.txt
             additional:
                 system: linux_x86_64
 
@@ -47,7 +47,7 @@ configure:
             version: 5.1.0
             description: '"Sets the environment for using gcc-5.1.0 compiler (C, C++, Fortran, Java)"'
             home: /opt/compilers/gcc/5.1.0
-            template_name: gcc_5.1.0.txt
+            template_name: gcc.txt
             additional:
                 system: linux_x86_64
 
@@ -91,7 +91,7 @@ configure:
             version: 1.6.5
             description: '"OPENMPI MPI utilities for IB/GNU compiler"'
             home: /opt/mpi/openmpi/1.6.5
-            template_name: mpi_openmpi_1.6.5.txt
+            template_name: mpi_openmpi.txt
             additional:
                 system: linux_x86_64
 
@@ -102,7 +102,7 @@ configure:
             version: 1.8.8
             description: '"OPENMPI MPI utilities for IB/GNU compiler"'
             home: /opt/mpi/openmpi/1.8.8
-            template_name: mpi_openmpi_1.8.8.txt
+            template_name: mpi_openmpi.txt
             additional:
                 system: linux_x86_64
 
@@ -135,7 +135,7 @@ configure:
             version: 4.8.6
             description: 'Set qt4.8.6 for use."'
             home: /opt/tools/qt/4.8.6
-            template_name: qt_4.8.6.txt
+            template_name: qt.txt
             additional:
                 system: linux_x86_64
 
@@ -146,7 +146,7 @@ configure:
             version: 5.4.2
             description: '"Set qt5.4.2 for use."'
             home: /opt/tools/qt/5.4.2
-            template_name: qt_5.4.2.txt
+            template_name: qt.txt
             additional:
                 system: linux_x86_64
 
